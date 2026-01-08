@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo2 from "../assets/copy_image.png";
 
 const Sidebar = ({ isOpen, onClose }) => {
   return (
@@ -37,9 +38,14 @@ const Sidebar = ({ isOpen, onClose }) => {
             ×
           </button>
 
-          <span className="sm:hidden md:hidden lg:block text-xl font-semibold tracking-wide">
-            Navatara Technologies
-          </span>
+          <div className="h-10 flex items-center relative group">
+            <img
+              src={Logo2}
+              alt="Navatara Technologies"
+              className="h-full w-auto object-contain transition-all duration-500"
+            />
+            <div className="absolute inset-0 bg-cyan-400 mix-blend-screen opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none rounded-full" />
+          </div>
         </div>
 
         {/* Menu */}

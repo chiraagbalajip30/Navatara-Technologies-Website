@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/navatara logo.jpg";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
+import Logo1 from "../assets/copy_2_image.png";
+import Logo2 from "../assets/copy_image.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,10 +52,19 @@ const Navbar = () => {
             {/* BORDER */}
             <div className="flex items-center justify-center ml-4 w-0.5 h-12 bg-white/40"></div>
 
+            <div className="h-10 flex items-center relative group">
+              <img
+                src={Logo2}
+                alt="Navatara Technologies"
+                className="h-full w-auto object-contain transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-cyan-400 mix-blend-screen opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none rounded-full" />
+            </div>
+
             {/* NAVATARA HEADING IN SMALL AND MEDIUM SCREENS */}
-            <h1 className="text-2xl font-semibold tracking-wide block lg:hidden">
+            {/* <h1 className="text-2xl font-semibold tracking-wide block lg:hidden">
               Navatara Technologies
-            </h1>
+            </h1> */}
           </div>
 
           {/* CENTER MENU — ONLY LARGE SCREENS */}
@@ -77,9 +88,11 @@ const Navbar = () => {
 
           {/* RIGHT SECTION — ONLY LARGE SCREENS */}
           <div className="hidden lg:flex items-center gap-6">
-            <button className="px-6 py-2 rounded-full border border-cyan-400 text-cyan-400 text-sm tracking-wide hover:bg-cyan-400 hover:text-black transition">
-              CONTACT US
-            </button>
+            <Link to="/contact">
+              <button className="px-6 py-2 rounded-full border border-cyan-400 text-cyan-400 text-sm tracking-wide hover:bg-cyan-400 hover:text-black transition">
+                CONTACT US
+              </button>
+            </Link>
           </div>
         </nav>
       </header>
