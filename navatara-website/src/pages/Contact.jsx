@@ -6,7 +6,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* LEFT SECTION */}
           <div className="px-4">
-            <h1 className="text-[36px] lg:text-[76px] font-light tracking-wide mb-22 text-white/90 hover:text-cyan-400 transition">
+            <h1 className="text-[36px] lg:text-[76px] font-light tracking-wide mb-22 text-white/90 hover:text-cyan-400 transition hover:cursor-pointer">
               Contact Us
             </h1>
 

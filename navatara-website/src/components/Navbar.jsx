@@ -18,7 +18,7 @@ const Navbar = () => {
             <button
               aria-label="toggle menu"
               onClick={() => setIsOpen(!isOpen)}
-              className="relative w-10 h-10 flex items-center justify-center"
+              className="relative w-10 h-10 flex items-center justify-center cursor-pointer hover:shadow-cyan-400/50 hover:shadow-lg transition"
             >
               <span
                 className={`
@@ -89,7 +89,7 @@ const Navbar = () => {
           {/* RIGHT SECTION — ONLY LARGE SCREENS */}
           <div className="hidden lg:flex items-center gap-6">
             <Link to="/contact">
-              <button className="px-6 py-2 rounded-full border border-cyan-400 text-cyan-400 text-sm tracking-wide hover:bg-cyan-400 hover:text-black transition">
+              <button className="px-6 py-2 rounded-full border border-cyan-400 text-cyan-400 text-sm tracking-wide hover:bg-cyan-400 hover:text-black transition hover:cursor-pointer">
                 CONTACT US
               </button>
             </Link>
