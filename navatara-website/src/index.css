@@ -1,1 +1,74 @@
 @import "tailwindcss";
+
+/* Enhanced Floating Particles Animation */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) scale(1);
+    opacity: 0;
+  }
+}
+
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+  animation: float linear infinite;
+  Force restart from bottom on load
+  animation-play-state: running;
+} */
+
+/* Strong Glowing Cyan Wave Background */
+/* .wave-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wave {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0.1) 40%, transparent 70%);
+  animation: wave-flow linear infinite;
+  filter: blur(1px);
+}
+
+@keyframes wave-flow {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg) scale(2);
+    opacity: 0;
+  }
+}
+
