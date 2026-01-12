@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="bg-black text-white min-h-screen">
+    <section className="gradient-bg text-white min-h-screen">
       <div className="max-w-[1440px] mx-auto px-6 py-20 md:px-8 lg:py-32 lg:px-20">
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
@@ -14,7 +14,7 @@ const About = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-[36px] lg:text-[76px] font-light tracking-wide mb-18 text-white/90 hover:text-cyan-400 transition hover:cursor-pointer"
+              className="text-gradient text-[36px] lg:text-[76px] font-light tracking-wide mb-18 hover:text-cyan-400 transition hover:cursor-pointer"
             >
               About Us
             </motion.h1>

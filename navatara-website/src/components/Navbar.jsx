@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/navatara logo.jpg";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
-import Logo1 from "../assets/copy_2_image.png";
-import Logo2 from "../assets/copy_image.png";
+import Logo from "../assets/copy_image.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,14 +50,16 @@ const Navbar = () => {
             {/* BORDER */}
             <div className="flex items-center justify-center ml-4 w-0.5 h-12 bg-white/40"></div>
 
-            <div className="h-10 flex items-center relative group">
-              <img
-                src={Logo2}
-                alt="Navatara Technologies"
-                className="h-full w-auto object-contain transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-cyan-400 mix-blend-screen opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none rounded-full" />
-            </div>
+            {/* Logo Link */}
+            <Link to="/" className="h-10 flex items-center relative group">
+              <div className="bg-white/90 backdrop-blur-sm rounded px-2 py-1 shadow-[0_0_10px_rgba(34,211,238,0.15)] group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all duration-300">
+                <img
+                  src={Logo}
+                  alt="Navatara Technologies"
+                  className="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </Link>
 
             {/* NAVATARA HEADING IN SMALL AND MEDIUM SCREENS */}
             {/* <h1 className="text-2xl font-semibold tracking-wide block lg:hidden">

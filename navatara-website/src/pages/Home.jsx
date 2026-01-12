@@ -1,16 +1,36 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Logo from "../assets/copy_image.png";
 
 const Home = () => {
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="gradient-bg text-white overflow-hidden">
       {/* HERO SECTION */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
+        {/* Company Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mb-12 flex justify-center"
+        >
+          <div className="relative group">
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 shadow-[0_0_30px_rgba(34,211,238,0.2)] group-hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] transition-all duration-300">
+              <img
+                src={Logo}
+                alt="Navatara Technologies"
+                className="h-20 sm:h-28 lg:h-36 w-auto object-contain"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10" />
+          </div>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-wide mb-6 max-w-5xl"
+          className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-wide mb-6 max-w-5xl text-gradient"
         >
           Building Modern Digital Solutions
           <br className="hidden sm:block" />
@@ -34,8 +54,8 @@ const Home = () => {
           transition={{ delay: 0.4 }}
         >
           <Link to="/contact">
-            <button className="px-8 py-3 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition">
-              Start a Project
+            <button className="btn-glow px-8 py-3 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition relative z-10">
+              <span className="relative z-10">Start a Project</span>
             </button>
           </Link>
         </motion.div>
@@ -62,9 +82,9 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="border border-white/20 p-8 hover:border-cyan-400 transition"
+                className="card-hover border border-white/20 p-8 rounded-lg bg-black/30 backdrop-blur-sm"
               >
-                <h3 className="text-xl mb-4">{service}</h3>
+                <h3 className="text-xl mb-4 hover:text-cyan-400 transition-colors">{service}</h3>
                 <p className="text-white/70">
                   Designed with performance, scalability, and long-term growth
                   in mind.
@@ -125,8 +145,8 @@ const Home = () => {
         </motion.h2>
 
         <Link to="/contact">
-          <button className="px-10 py-4 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition">
-            Contact Us
+          <button className="btn-glow px-10 py-4 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition relative z-10">
+            <span className="relative z-10">Contact Us</span>
           </button>
         </Link>
       </section>
