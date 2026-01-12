@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -9,31 +10,56 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* LEFT SECTION */}
           <div className="px-4">
-            <h1 className="text-[36px] lg:text-[76px] font-light tracking-wide mb-18 text-white/90 hover:text-cyan-400 transition hover:cursor-pointer">
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[36px] lg:text-[76px] font-light tracking-wide mb-18 text-white/90 hover:text-cyan-400 transition hover:cursor-pointer"
+            >
               About Us
-            </h1>
+            </motion.h1>
 
             {/* About Us Explanation - Now wider like Services */}
-            <div className="max-w-4xl space-y-6 text-white/80 text-base sm:text-lg lg:text-xl leading-relaxed font-light mt-10">
-              <p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-4xl space-y-6 text-white/80 text-base sm:text-lg lg:text-xl leading-relaxed font-light mt-10"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 At Navatara Technologies, we help businesses reimagine their
                 digital future with innovative, human-centric solutions. Our
                 deep expertise in software engineering, combined with strategic
                 consulting, creative design thinking, and seamless digital
                 capabilities, delivers real value to our clients.
-              </p>
+              </motion.p>
 
-              <p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 We focus on understanding your unique needs to craft tailored
                 websites, mobile applications, e-commerce platforms, and
                 branding that drive growth and efficiency. Committed to quality,
                 transparency, and timely delivery, we build lasting partnerships
                 that empower your success in a digital world.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Contact Info */}
-            <div className="mt-12">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-12"
+            >
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-3 text-lg tracking-tight"
@@ -45,13 +71,19 @@ const About = () => {
                   <HiOutlineArrowSmallRight className="w-6 h-6" />
                 </span>
               </Link>
-            </div>
+            </motion.div>
           </div>
 
           {/* RIGHT SECTION - Optional placeholder for image/content later */}
-          <div className="hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="hidden lg:block"
+          >
             {/* You can add an image, animation, or graphic here later */}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

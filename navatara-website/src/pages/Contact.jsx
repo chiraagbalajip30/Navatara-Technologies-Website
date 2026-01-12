@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
     <section className="bg-black text-white min-h-screen">
@@ -6,17 +8,39 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* LEFT SECTION */}
           <div className="px-4">
-            <h1 className="text-[36px] lg:text-[76px] font-light tracking-wide mb-22 text-white/90 hover:text-cyan-400 transition hover:cursor-pointer">
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-[36px] lg:text-[76px] font-light tracking-wide mb-22 text-white/90 hover:text-cyan-400 transition hover:cursor-pointer"
+            >
               Contact Us
-            </h1>
+            </motion.h1>
 
             {/* Address Block */}
-            <div className="space-y-10">
-              <p className="text-md tracking-[0.3em] text-cyan-300 mb-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-10"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-md tracking-[0.3em] text-cyan-300 mb-4"
+              >
                 Navatara Technologies
-              </p>
+              </motion.p>
 
-              <p className="text-lg leading-relaxed text-white/90 font-light">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-lg leading-relaxed text-white/90 font-light"
+              >
                 3410/B, 1ST FLOOR 2ND MAIN,
                 <br />
                 9th Cross Rd, RPC Layout, Vijayanagar,
@@ -24,12 +48,22 @@ const Contact = () => {
                 Bengaluru, Karnataka 560040,
                 <br />
                 India
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Contact Info */}
-            <div className="space-y-3 text-lg mt-6 tracking-tight">
-              <p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="space-y-3 text-lg mt-6 tracking-tight"
+            >
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+              >
                 <span className="text-white/60 mr-2">P</span>
                 <a
                   href="tel:+919845201432"
@@ -37,9 +71,14 @@ const Contact = () => {
                 >
                   +91 98452 01432
                 </a>
-              </p>
+              </motion.p>
 
-              <p>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+              >
                 <span className="text-white/60 mr-2">E</span>
                 <a
                   href="mailto:contact@navatara.tech"
@@ -47,8 +86,8 @@ const Contact = () => {
                 >
                   navatara.technologies@gmail.com
                 </a>
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
         </div>
       </div>
